@@ -23,15 +23,15 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-line bg-ink-950/80 backdrop-blur-xl' : 'border-b border-transparent'
+        scrolled ? 'border-b border-line bg-canvas/80 backdrop-blur-xl' : 'border-b border-transparent'
       }`}
     >
       <nav className="container-content flex h-16 items-center justify-between">
         <a href="#top" className="group flex items-center gap-2.5" aria-label="Home">
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-white/[0.03] font-display text-sm font-700 text-accent-400 transition-colors group-hover:border-accent-500/50">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-700 font-display text-sm font-700 text-white">
             NP
           </span>
-          <span className="hidden font-display text-sm font-600 tracking-tight text-slate-100 sm:block">
+          <span className="hidden font-display text-sm font-700 tracking-tight text-ink-900 sm:block">
             Nicolas Perrin
           </span>
         </a>
@@ -41,7 +41,7 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
+              className="text-sm font-500 text-ink-600 transition-colors hover:text-ink-900"
             >
               {l.label}
             </a>

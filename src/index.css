@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   html {
@@ -14,31 +14,30 @@
   }
 
   body {
-    @apply bg-ink-950 text-slate-200 font-sans antialiased;
+    @apply bg-canvas text-ink-600 font-sans antialiased;
     background-image:
-      radial-gradient(60rem 40rem at 80% -10%, rgba(99, 102, 241, 0.12), transparent 60%),
-      radial-gradient(50rem 40rem at -10% 10%, rgba(99, 102, 241, 0.08), transparent 55%);
+      radial-gradient(48rem 32rem at 88% -8%, rgba(12, 102, 228, 0.07), transparent 60%),
+      radial-gradient(40rem 28rem at -8% 4%, rgba(12, 102, 228, 0.05), transparent 55%);
     background-attachment: fixed;
   }
 
   ::selection {
-    @apply bg-accent-500/30 text-white;
+    @apply bg-brand-100 text-brand-800;
   }
 
-  /* Subtle custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #08080b;
+    background: #eef0f3;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1d1d29;
+    background: #cfd4dc;
     border-radius: 999px;
-    border: 2px solid #08080b;
+    border: 2px solid #eef0f3;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2a2a3a;
+    background: #b8bec9;
   }
 }
 
@@ -47,49 +46,52 @@
     @apply mx-auto w-full max-w-content px-6 md:px-8;
   }
 
-  /* Mono eyebrow label used above section titles */
   .eyebrow {
-    @apply font-mono text-xs font-medium uppercase tracking-[0.25em] text-accent-400;
+    @apply font-mono text-xs font-medium uppercase tracking-[0.22em] text-brand-600;
   }
 
   .card {
-    @apply rounded-2xl border border-line bg-white/[0.02] backdrop-blur-sm transition-colors duration-300;
+    @apply rounded-2xl border border-line bg-surface shadow-card transition-all duration-300;
   }
-  .card:hover {
-    @apply border-white/15 bg-white/[0.04];
-  }
-
-  /* Hairline separator */
-  .hairline {
-    @apply border-t border-line;
+  .card-hover:hover {
+    @apply -translate-y-0.5 border-line-strong shadow-card-hover;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/60;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-600 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
   }
   .btn-primary {
-    @apply btn bg-accent-500 text-white hover:bg-accent-400 shadow-[0_0_0_0_rgba(99,102,241,0.5)] hover:shadow-[0_8px_30px_-6px_rgba(99,102,241,0.55)];
+    @apply btn bg-brand-700 text-white shadow-btn hover:bg-brand-800;
   }
   .btn-ghost {
-    @apply btn border border-line bg-white/[0.02] text-slate-200 hover:border-white/20 hover:bg-white/[0.05];
+    @apply btn border border-line-strong bg-surface text-ink-700 shadow-btn hover:border-ink-300 hover:bg-brand-50;
   }
 
   .tag {
-    @apply inline-flex items-center rounded-full border border-line bg-white/[0.02] px-3 py-1 font-mono text-xs text-slate-300;
+    @apply inline-flex items-center gap-1.5 rounded-md border border-line bg-white px-2.5 py-1 font-mono text-xs text-ink-600;
+  }
+
+  /* Company logo rendered as a uniform monochrome mask */
+  .logo-mono {
+    @apply bg-ink-500 transition-colors duration-300;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+  .logo-mono:hover {
+    @apply bg-ink-700;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-slate-400 bg-clip-text text-transparent;
-  }
   .text-balance {
     text-wrap: balance;
   }
-  .grid-noise {
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 56px 56px;
+  .grid-dots {
+    background-image: radial-gradient(rgba(9, 30, 66, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
   }
 }
