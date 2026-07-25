@@ -1,16 +1,33 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/content'
+import { useLang } from '../i18n'
 import { DownloadIcon } from './icons'
 
-const links = [
-  { href: '#about', label: 'About' },
-  { href: '#expertise', label: 'Expertise' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#work', label: 'Work' },
-  { href: '#contact', label: 'Contact' },
-]
+function LangToggle() {
+  const { lang, setLang } = useLang()
+  return (
+    <div
+      className="inline-flex items-center rounded-lg border border-line bg-white p-0.5 text-xs font-600"
+      role="group"
+      aria-label="Language"
+    >
+      {(['en', 'fr'] as const).map((l) => (
+        <button
+          key={l}
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          className={`rounded-md px-2 py-1 uppercase transition-colors ${
+            lang === l ? 'bg-brand-700 text-white' : 'text-ink-500 hover:text-ink-800'
+          }`}
+        >
+          {l}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export function Nav() {
+  const { content } = useLang()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -26,7 +43,7 @@ export function Nav() {
         scrolled ? 'border-b border-line bg-canvas/80 backdrop-blur-xl' : 'border-b border-transparent'
       }`}
     >
-      <nav className="container-content flex h-16 items-center justify-between">
+      <nav className="container-content flex h-16 items-center justify-between gap-4">
         <a href="#top" className="group flex items-center gap-2.5" aria-label="Home">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-700 font-display text-sm font-700 text-white">
             NP
@@ -37,7 +54,7 @@ export function Nav() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
+          {content.nav.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -48,11 +65,14 @@ export function Nav() {
           ))}
         </div>
 
-        <a href={profile.cv} download className="btn-ghost !py-2 !px-4 text-xs">
-          <DownloadIcon width={15} height={15} />
-          <span className="hidden sm:inline">Download CV</span>
-          <span className="sm:hidden">CV</span>
-        </a>
+        <div className="flex items-center gap-2.5">
+          <LangToggle />
+          <a href={content.profile.cv} download className="btn-ghost !py-2 !px-4 text-xs">
+            <DownloadIcon width={15} height={15} />
+            <span className="hidden lg:inline">{content.ui.downloadCV}</span>
+            <span className="lg:hidden">CV</span>
+          </a>
+        </div>
       </nav>
     </header>
   )

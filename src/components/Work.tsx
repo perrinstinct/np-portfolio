@@ -1,16 +1,14 @@
-import { projects, education, languages } from '../data/content'
+import { useContent } from '../i18n'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
 import { ArrowUpRight } from './icons'
 
 export function Work() {
+  const { work } = useContent()
+  const { meta, projects, education, languages, eduTitle } = work
+
   return (
-    <Section
-      id="work"
-      eyebrow="Selected work"
-      title="Side projects where I explore what’s next."
-      intro="Beyond client work, I prototype the ideas I believe in — including where agentic AI actually belongs."
-    >
+    <Section id="work" eyebrow={meta.eyebrow} title={meta.title} intro={meta.intro}>
       <div className="grid gap-4 lg:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal as="article" key={p.name} delay={i * 0.08}>
@@ -36,10 +34,9 @@ export function Work() {
           </Reveal>
         ))}
 
-        {/* Education + languages */}
         <Reveal as="article" delay={0.12}>
           <div className="card h-full rounded-2xl p-6 md:p-7">
-            <h3 className="font-display text-xl font-700 text-ink-900">Education & languages</h3>
+            <h3 className="font-display text-xl font-700 text-ink-900">{eduTitle}</h3>
             <ul className="mt-4 space-y-4">
               {education.map((e) => (
                 <li key={e.school} className="border-l-2 border-brand-100 pl-4">

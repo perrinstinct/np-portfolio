@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { profile, stats } from '../data/content'
+import { useContent } from '../i18n'
 import { ArrowIcon, LinkedInIcon, DownloadIcon } from './icons'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 function Portrait() {
+  const { profile } = useContent()
   const [failed, setFailed] = useState(false)
 
   return (
     <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:ml-auto">
-      {/* accent shapes behind */}
       <div className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 rounded-3xl bg-brand-100" />
       <div className="pointer-events-none absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-brand-500/10 blur-2xl" />
 
@@ -31,7 +31,6 @@ function Portrait() {
         </div>
       </div>
 
-      {/* floating role card */}
       <div className="absolute -bottom-4 left-4 flex items-center gap-2.5 rounded-xl border border-line bg-white/95 px-3.5 py-2.5 shadow-card backdrop-blur">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -44,13 +43,14 @@ function Portrait() {
 }
 
 export function Hero() {
+  const { profile, stats, ui } = useContent()
+
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
       <div className="pointer-events-none absolute inset-0 grid-dots opacity-60 [mask-image:radial-gradient(48rem_32rem_at_30%_0%,black,transparent_75%)]" />
 
       <div className="container-content relative">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Left — copy */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -88,7 +88,7 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <a href="#contact" className="btn-primary">
-                Let’s work together
+                {ui.workTogether}
                 <ArrowIcon width={16} height={16} />
               </a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
@@ -102,7 +102,6 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — portrait */}
           <motion.div
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -112,7 +111,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats */}
         <motion.dl
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

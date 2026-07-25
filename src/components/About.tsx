@@ -1,8 +1,10 @@
-import { about } from '../data/content'
+import { useContent } from '../i18n'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
 
 export function About() {
+  const { about } = useContent()
+
   return (
     <Section id="about" eyebrow={about.eyebrow} title={about.title}>
       <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">

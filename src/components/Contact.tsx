@@ -1,8 +1,10 @@
-import { profile } from '../data/content'
+import { useContent } from '../i18n'
 import { Reveal } from './Reveal'
 import { MailIcon, LinkedInIcon, DownloadIcon, ArrowIcon } from './icons'
 
 export function Contact() {
+  const { contact, profile } = useContent()
+
   return (
     <section id="contact" className="scroll-mt-24 py-20 md:py-28">
       <div className="container-content">
@@ -13,18 +15,16 @@ export function Contact() {
 
             <div className="relative">
               <p className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-brand-200">
-                Let’s talk
+                {contact.eyebrow}
               </p>
               <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-800 leading-tight tracking-tight text-balance md:text-[2.75rem]">
-                Got a backend or AI mission?
+                {contact.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base text-brand-100 md:text-lg">
-                Freelance & contract, remote-friendly. Tell me what you’re building.
-              </p>
+              <p className="mx-auto mt-4 max-w-xl text-base text-brand-100 md:text-lg">{contact.sub}</p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href={`mailto:${profile.email}?subject=Freelance%20mission%20—%20let’s%20talk`}
+                  href={`mailto:${profile.email}?subject=${encodeURIComponent(contact.mailSubject)}`}
                   className="btn bg-white text-brand-700 shadow-btn hover:bg-brand-50"
                 >
                   <MailIcon width={16} height={16} />
@@ -45,7 +45,7 @@ export function Contact() {
                   className="btn border border-white/25 bg-white/10 text-white hover:bg-white/20"
                 >
                   <DownloadIcon width={16} height={16} />
-                  Download CV
+                  {contact.downloadCV}
                 </a>
               </div>
 

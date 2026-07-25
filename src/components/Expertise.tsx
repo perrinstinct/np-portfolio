@@ -1,18 +1,16 @@
-import { expertise } from '../data/content'
+import { useContent } from '../i18n'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
 import { DomainIcon } from './DomainIcon'
 
 export function Expertise() {
+  const { expertise } = useContent()
+  const { meta, groups } = expertise
+
   return (
-    <Section
-      id="expertise"
-      eyebrow="Expertise"
-      title="A backend core, with an AI edge."
-      intro="Depth where it matters — production Java & Spring Boot — plus a genuine, hands-on command of the AI engineering the market is asking for."
-    >
+    <Section id="expertise" eyebrow={meta.eyebrow} title={meta.title} intro={meta.intro}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {expertise.map((g, i) => (
+        {groups.map((g, i) => (
           <Reveal as="article" key={g.key} delay={i * 0.06}>
             <div
               className={`card card-hover h-full rounded-2xl p-6 ${

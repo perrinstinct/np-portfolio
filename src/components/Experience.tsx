@@ -1,20 +1,18 @@
-import { experiences } from '../data/content'
+import { useContent } from '../i18n'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
 
 export function Experience() {
+  const { experience } = useContent()
+  const { meta, items } = experience
+
   return (
-    <Section
-      id="experience"
-      eyebrow="Experience"
-      title="Five years shipping real systems."
-      intro="Aviation, consulting and data — always close to production, always owning the outcome."
-    >
+    <Section id="experience" eyebrow={meta.eyebrow} title={meta.title} intro={meta.intro}>
       <div className="relative">
         <div className="absolute left-[7px] top-2 bottom-2 hidden w-px bg-line md:block" />
 
         <div className="space-y-6">
-          {experiences.map((exp, i) => (
+          {items.map((exp, i) => (
             <Reveal as="article" key={exp.company} delay={i * 0.08} className="md:pl-10">
               <span
                 className={`absolute left-0 mt-2 hidden h-3.5 w-3.5 rounded-full border-2 border-white md:block ${

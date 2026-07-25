@@ -1,6 +1,8 @@
-import { profile } from '../data/content'
+import { useContent } from '../i18n'
 
 export function Footer() {
+  const { profile, footer } = useContent()
+
   return (
     <footer className="border-t border-line bg-white py-10">
       <div className="container-content flex flex-col items-center justify-between gap-4 sm:flex-row">
@@ -24,9 +26,7 @@ export function Footer() {
           </a>
         </div>
       </div>
-      <p className="container-content mt-6 text-center font-mono text-[11px] text-ink-400">
-        Built with React, Vite &amp; Tailwind.
-      </p>
+      <p className="container-content mt-6 text-center font-mono text-[11px] text-ink-400">{footer.built}</p>
     </footer>
   )
 }
