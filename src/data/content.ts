@@ -2,7 +2,7 @@ export const profile = {
   name: 'Nicolas Perrin',
   role: 'Senior Backend Engineer',
   stack: 'Java · Spring Boot · AI Engineering',
-  photo: '/nicolas.jpg',
+  photo: '/nicolas.jpg', // optimized from public/nicolas.png (sips, 1000px q82)
   // Hero headline — the differentiating narrative
   headline: ['I build the backend systems that', 'put AI into production.'],
   subhead:
