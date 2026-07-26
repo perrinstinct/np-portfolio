@@ -25,7 +25,7 @@ export type Project = { name: string; tagline: string; description: string; tags
 // ── Language-invariant data ────────────────────────────────────────────────
 const links = {
   email: 'nicolas.perrin83110@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/nicolas-perrin',
+  linkedin: 'https://www.linkedin.com/in/nicolas-perrin-b6ab99171/',
   cv: '/Nicolas-Perrin-CV.pdf',
   photo: '/nicolas.jpg', // optimized from public/nicolas.png (sips, 1000px q82)
 }
@@ -92,7 +92,7 @@ const T = {
       headline: ['I build the backend systems that', 'put AI into production.'],
       subhead:
         'Senior software engineer, 5+ years on Java / Spring Boot — today for Air France / KLM. I bring the engineering rigor that turns AI from a demo into a production-grade service.',
-      location: 'France · Remote-friendly',
+      location: 'Working with clients worldwide · Remote first / remote friendly',
       availability: 'Available for freelance',
     },
     stats: [
@@ -183,7 +183,8 @@ const T = {
     contact: {
       eyebrow: 'Let’s talk',
       title: 'Got a backend or AI mission?',
-      sub: 'Freelance & contract, remote-friendly. Tell me what you’re building.',
+      sub: 'Freelance & contract, anywhere in the world. Tell me what you’re building.',
+      emailCta: 'Send me an email',
       downloadCV: 'Download CV',
       mailSubject: 'Freelance mission — let’s talk',
     },
@@ -210,7 +211,7 @@ const T = {
       headline: ['Je conçois les systèmes backend qui', 'font tourner l’IA en production.'],
       subhead:
         'Ingénieur logiciel senior, 5+ ans sur Java / Spring Boot — aujourd’hui pour Air France / KLM. J’apporte la rigueur d’ingénierie qui transforme l’IA d’une démo en un service prêt pour la production.',
-      location: 'France · Ouvert au télétravail',
+      location: 'Missions partout dans le monde · Remote first / remote friendly',
       availability: 'Disponible en freelance',
     },
     stats: [
@@ -301,7 +302,8 @@ const T = {
     contact: {
       eyebrow: 'Discutons',
       title: 'Une mission backend ou IA ?',
-      sub: 'Freelance & prestation, télétravail bienvenu. Dites-moi ce que vous construisez.',
+      sub: 'Freelance & prestation, partout dans le monde. Dites-moi ce que vous construisez.',
+      emailCta: 'M’envoyer un email',
       downloadCV: 'Télécharger le CV',
       mailSubject: 'Mission freelance — discutons',
     },

@@ -28,7 +28,7 @@ export function Contact() {
                   className="btn bg-white text-brand-700 shadow-btn hover:bg-brand-50"
                 >
                   <MailIcon width={16} height={16} />
-                  {profile.email}
+                  {contact.emailCta}
                 </a>
                 <a
                   href={profile.linkedin}
