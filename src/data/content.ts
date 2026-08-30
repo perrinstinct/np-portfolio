@@ -39,36 +39,36 @@ const companyLogos = {
 export const techMarquee: Tech[] = [
   { name: 'Java', logo: '/logos/tech/java.svg' },
   { name: 'Spring Boot', logo: '/logos/tech/spring.svg' },
-  { name: 'Azure', logo: '/logos/tech/azure.svg' },
-  { name: 'Kafka', logo: '/logos/tech/kafka.svg' },
   { name: 'PostgreSQL', logo: '/logos/tech/postgresql.svg' },
+  { name: 'Kafka', logo: '/logos/tech/kafka.svg' },
+  { name: 'Azure', logo: '/logos/tech/azure.svg' },
   { name: 'Kubernetes', logo: '/logos/tech/kubernetes.svg' },
   { name: 'Docker', logo: '/logos/tech/docker.svg' },
   { name: 'Terraform', logo: '/logos/tech/terraform.svg' },
   { name: 'GitHub Actions', logo: '/logos/tech/githubactions.svg' },
-  { name: 'Angular', logo: '/logos/tech/angular.svg' },
   { name: 'MongoDB', logo: '/logos/tech/mongodb.svg' },
   { name: 'Elasticsearch', logo: '/logos/tech/elasticsearch.svg' },
   { name: 'Spark', logo: '/logos/tech/spark.svg' },
+  { name: 'Angular', logo: '/logos/tech/angular.svg' },
 ]
 
 // Tech/skill item labels are shared (mostly product names)
 const expertiseItems = {
-  backend: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'REST API design', 'JUnit / Mockito'],
-  ai: ['Spring AI', 'MCP Server & Registry', 'Azure OpenAI', 'RAG & recommendation'],
+  backend: ['Java 17–25', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'REST API design', 'JUnit / Mockito'],
   cloud: ['Azure (AKS, APIM)', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
   data: ['PostgreSQL', 'Kafka', 'Spark', 'MongoDB', 'Snowflake'],
   observability: ['Dynatrace', 'ELK Stack'],
   frontend: ['Angular', 'Reactive forms', 'Tailwind CSS'],
+  ai: ['Spring AI', 'MCP Server & Registry', 'Azure OpenAI', 'RAG & recommendation'],
 }
 
 const expTags = {
-  airfrance: ['Java 25', 'Spring Boot 4', 'Azure AKS', 'Spring AI / MCP', 'Angular'],
-  accenture: ['Spring Boot', 'Kafka', 'Spark', 'Azure OpenAI', 'Kubernetes'],
+  airfrance: ['Java 25', 'Spring Boot 4', 'PostgreSQL', 'Azure AKS', 'Angular'],
+  accenture: ['Spring Boot', 'Kafka', 'Spark', 'Kubernetes', 'MongoDB'],
   virbac: ['Snowflake', 'Python', 'Talend', 'Power BI', 'SQL'],
 }
 
-const projectTags = ['Java', 'Spring', 'Kafka', 'Agentic AI']
+const projectTags = ['Java', 'Spring', 'Kafka', 'Event-driven']
 
 // ── Per-language strings ────────────────────────────────────────────────────
 const T = {
@@ -88,10 +88,10 @@ const T = {
     },
     profile: {
       role: 'Senior Backend Engineer',
-      stack: 'Java · Spring Boot · AI Engineering',
-      headline: ['I build the backend systems that', 'put AI into production.'],
+      stack: 'Java · Spring Boot · Cloud-native',
+      headline: ['I build Java backends', 'that hold up in production.'],
       subhead:
-        'Senior software engineer, 5+ years on Java / Spring Boot — today for Air France / KLM. I bring the engineering rigor that turns AI from a demo into a production-grade service.',
+        'Senior software engineer, 5+ years designing and shipping Java / Spring Boot systems — today for Air France / KLM. REST APIs, clean architecture, PostgreSQL and cloud-native delivery on Azure.',
       location: 'Working with clients worldwide · Remote first / remote friendly',
       availability: 'Available for freelance',
     },
@@ -102,29 +102,29 @@ const T = {
     ],
     about: {
       eyebrow: 'Positioning',
-      title: 'The engineer behind the AI — not just the prompt.',
+      title: 'Clean architecture, shipped to production.',
       paragraphs: [
-        'Most of my career is backend: REST APIs, business services and clean, scalable architecture on Java & Spring Boot. That foundation is exactly what AI products need — reliable services, sound data, observability and CI/CD around the model.',
-        'I’ve shipped an MCP Server (Spring AI + MCP Registry) and a recommendation engine on Azure OpenAI. I speak both languages: production-grade backend, and applied agentic AI.',
+        'Five years building the systems companies actually run on: REST APIs, business services and clean, scalable architecture in Java & Spring Boot — with PostgreSQL, Spring Security and testing as defaults, not afterthoughts.',
+        'I own features end to end, from the service layer through CI/CD to production support. And when a project needs an AI layer on top, I’ve shipped that too — a Spring AI / MCP server and a recommendation engine on Azure OpenAI.',
       ],
       highlights: [
-        'End-to-end feature ownership — service to UI',
-        'Clean architecture, testing & CI/CD by default',
+        'REST API design & clean architecture',
+        'Testing, CI/CD & production support',
         'Cloud-native on Azure (AKS, API Management)',
       ],
     },
     expertise: {
       eyebrow: 'Expertise',
-      title: 'A backend core, with an AI edge.',
+      title: 'Java & Spring Boot, end to end.',
       intro:
-        'Depth where it matters — production Java & Spring Boot — plus a genuine, hands-on command of the AI engineering the market is asking for.',
+        'Deep where it counts — production Java and Spring Boot — with the cloud, data and delivery skills that surround it.',
       groups: {
-        backend: { title: 'Backend & APIs', blurb: 'Robust services that scale and stay maintainable.' },
-        ai: { title: 'AI Engineering', blurb: 'Agentic & LLM systems, engineered like real software.' },
+        backend: { title: 'Backend & APIs', blurb: 'The core: robust Spring Boot services that scale and stay maintainable.' },
         cloud: { title: 'Cloud & DevOps', blurb: 'Cloud-native delivery, container to production.' },
         data: { title: 'Data & Messaging', blurb: 'Event-driven pipelines and reliable persistence.' },
         observability: { title: 'Observability', blurb: 'Root-cause fast, ship fixes under SLA.' },
         frontend: { title: 'Frontend', blurb: 'Owning the UI when a feature needs it.' },
+        ai: { title: 'AI Integration', blurb: 'When a project needs an LLM layer, engineered properly.' },
       },
     },
     experience: {
@@ -137,9 +137,9 @@ const T = {
           period: 'Sept 2024 — Present',
           summary: 'Internal API integration platform used across engineering groups company-wide.',
           points: [
-            'Backend on Java 25 / Spring Boot 4 — REST APIs, PostgreSQL, Spring Security, CI/CD; clean, scalable architecture.',
+            'Backend on Java 25 / Spring Boot 4 — REST APIs, business services, PostgreSQL, Spring Security and CI/CD, with clean, scalable architecture.',
             'Migrated a monolith to a full Azure-native stack — containerized on AKS, secrets in Key Vault.',
-            'Built an MCP Server (Spring AI + MCP Registry) exposing Tools, Resources & Prompts for asset discovery.',
+            'API governance in Azure API Management; production support with Dynatrace & ELK under SLA.',
           ],
         },
         accenture: {
@@ -148,7 +148,7 @@ const T = {
           summary: 'Backend services and real-time data products for a major travel-sector client.',
           points: [
             'Java / Spring Boot services, containerized with Docker / Kubernetes.',
-            'Real-time pipelines with Kafka & Spark; recommendation engine on Azure OpenAI.',
+            'Real-time pipelines with Kafka & Spark; scaled MongoDB for traveler-behavior analysis.',
           ],
         },
         virbac: {
@@ -165,13 +165,12 @@ const T = {
     work: {
       eyebrow: 'Selected work',
       title: 'Side projects where I explore what’s next.',
-      intro:
-        'Beyond client work, I prototype the ideas I believe in — including where agentic AI actually belongs.',
+      intro: 'Beyond client work, I prototype the architectures I believe in.',
       project: {
         name: 'Agentic Trading',
-        tagline: 'Human-in-the-loop trading decision-support',
+        tagline: 'Event-driven decision-support · Java / Spring / Kafka',
         description:
-          'A personal R&D project: a phase-gated, event-driven system (Java / Spring / Kafka) where AI agents surface signals and rationale — while a human stays in control of every decision.',
+          'A personal R&D project: a phase-gated, event-driven system built on Java, Spring and Kafka, where automated signals are surfaced with their rationale — and a human stays in control of every decision.',
       },
       eduTitle: 'Education & languages',
       education: [
@@ -182,7 +181,7 @@ const T = {
     },
     contact: {
       eyebrow: 'Let’s talk',
-      title: 'Got a backend or AI mission?',
+      title: 'Got a Java / Spring Boot mission?',
       sub: 'Freelance & contract, anywhere in the world. Tell me what you’re building.',
       emailCta: 'Send me an email',
       downloadCV: 'Download CV',
@@ -207,10 +206,10 @@ const T = {
     },
     profile: {
       role: 'Ingénieur Backend Senior',
-      stack: 'Java · Spring Boot · Ingénierie IA',
-      headline: ['Je conçois les systèmes backend qui', 'font tourner l’IA en production.'],
+      stack: 'Java · Spring Boot · Cloud-native',
+      headline: ['Je construis des backends Java', 'qui tiennent en production.'],
       subhead:
-        'Ingénieur logiciel senior, 5+ ans sur Java / Spring Boot — aujourd’hui pour Air France / KLM. J’apporte la rigueur d’ingénierie qui transforme l’IA d’une démo en un service prêt pour la production.',
+        'Ingénieur logiciel senior, 5+ ans à concevoir et livrer des systèmes Java / Spring Boot — aujourd’hui pour Air France / KLM. API REST, architecture propre, PostgreSQL et livraison cloud-native sur Azure.',
       location: 'Missions partout dans le monde · Remote first / remote friendly',
       availability: 'Disponible en freelance',
     },
@@ -221,29 +220,29 @@ const T = {
     ],
     about: {
       eyebrow: 'Positionnement',
-      title: 'L’ingénieur derrière l’IA — pas juste le prompt.',
+      title: 'Une architecture propre, livrée en production.',
       paragraphs: [
-        'L’essentiel de mon parcours est backend : API REST, services métier et architecture propre et scalable sur Java & Spring Boot. C’est exactement ce dont les produits IA ont besoin — des services fiables, des données saines, de l’observabilité et du CI/CD autour du modèle.',
-        'J’ai livré un serveur MCP (Spring AI + MCP Registry) et un moteur de recommandation sur Azure OpenAI. Je parle les deux langages : un backend prêt pour la production, et l’IA agentique appliquée.',
+        'Cinq ans à construire les systèmes sur lesquels les entreprises tournent vraiment : API REST, services métier et architecture propre et scalable en Java & Spring Boot — avec PostgreSQL, Spring Security et les tests comme réflexes, pas comme options.',
+        'Je prends les fonctionnalités de bout en bout, du service au CI/CD jusqu’au support en production. Et quand un projet a besoin d’une couche IA, je l’ai fait aussi : un serveur Spring AI / MCP et un moteur de recommandation sur Azure OpenAI.',
       ],
       highlights: [
-        'Fonctionnalités menées de bout en bout — du service à l’UI',
-        'Architecture propre, tests & CI/CD par défaut',
+        'Conception d’API REST & architecture propre',
+        'Tests, CI/CD & support en production',
         'Cloud-native sur Azure (AKS, API Management)',
       ],
     },
     expertise: {
       eyebrow: 'Expertise',
-      title: 'Un socle backend, avec une touche IA.',
+      title: 'Java & Spring Boot, de bout en bout.',
       intro:
-        'De la profondeur là où ça compte — Java & Spring Boot en production — et une vraie maîtrise concrète de l’ingénierie IA que le marché recherche.',
+        'De la profondeur là où ça compte — Java et Spring Boot en production — avec les compétences cloud, data et delivery qui vont autour.',
       groups: {
-        backend: { title: 'Backend & APIs', blurb: 'Des services robustes, scalables et maintenables.' },
-        ai: { title: 'Ingénierie IA', blurb: 'Systèmes agentiques & LLM, conçus comme du vrai logiciel.' },
+        backend: { title: 'Backend & APIs', blurb: 'Le cœur : des services Spring Boot robustes, scalables et maintenables.' },
         cloud: { title: 'Cloud & DevOps', blurb: 'Livraison cloud-native, du conteneur à la production.' },
         data: { title: 'Data & Messaging', blurb: 'Pipelines event-driven et persistance fiable.' },
         observability: { title: 'Observabilité', blurb: 'Diagnostic rapide, correctifs livrés sous SLA.' },
         frontend: { title: 'Frontend', blurb: 'Prendre en main l’UI quand une fonctionnalité l’exige.' },
+        ai: { title: 'Intégration IA', blurb: 'Quand un projet a besoin d’une couche LLM, faite proprement.' },
       },
     },
     experience: {
@@ -256,9 +255,9 @@ const T = {
           period: 'Sept. 2024 — Aujourd’hui',
           summary: 'Plateforme interne d’intégration d’API utilisée par les équipes d’ingénierie de tout le groupe.',
           points: [
-            'Backend en Java 25 / Spring Boot 4 — API REST, PostgreSQL, Spring Security, CI/CD ; architecture propre et scalable.',
+            'Backend en Java 25 / Spring Boot 4 — API REST, services métier, PostgreSQL, Spring Security et CI/CD, avec une architecture propre et scalable.',
             'Migration d’un monolithe vers une stack 100 % Azure — conteneurisé sur AKS, secrets dans Key Vault.',
-            'Construction d’un serveur MCP (Spring AI + MCP Registry) exposant Tools, Resources & Prompts pour la découverte d’assets.',
+            'Gouvernance d’API sur Azure API Management ; support production avec Dynatrace & ELK sous SLA.',
           ],
         },
         accenture: {
@@ -267,7 +266,7 @@ const T = {
           summary: 'Services backend et produits data temps réel pour un grand client du secteur voyage.',
           points: [
             'Services Java / Spring Boot, conteneurisés avec Docker / Kubernetes.',
-            'Pipelines temps réel avec Kafka & Spark ; moteur de recommandation sur Azure OpenAI.',
+            'Pipelines temps réel avec Kafka & Spark ; mise à l’échelle de MongoDB pour l’analyse comportementale.',
           ],
         },
         virbac: {
@@ -284,13 +283,12 @@ const T = {
     work: {
       eyebrow: 'Projets sélectionnés',
       title: 'Des projets perso où j’explore la suite.',
-      intro:
-        'Au-delà des missions, je prototype les idées auxquelles je crois — notamment la juste place de l’IA agentique.',
+      intro: 'Au-delà des missions, je prototype les architectures auxquelles je crois.',
       project: {
         name: 'Agentic Trading',
-        tagline: 'Aide à la décision de trading, l’humain dans la boucle',
+        tagline: 'Aide à la décision event-driven · Java / Spring / Kafka',
         description:
-          'Un projet perso de R&D : un système event-driven par paliers (Java / Spring / Kafka), où des agents IA font émerger signaux et justifications — tandis que l’humain garde le contrôle de chaque décision.',
+          'Un projet perso de R&D : un système event-driven par paliers, bâti sur Java, Spring et Kafka, où des signaux automatisés sont présentés avec leur justification — l’humain gardant le contrôle de chaque décision.',
       },
       eduTitle: 'Formation & langues',
       education: [
@@ -301,7 +299,7 @@ const T = {
     },
     contact: {
       eyebrow: 'Discutons',
-      title: 'Une mission backend ou IA ?',
+      title: 'Une mission Java / Spring Boot ?',
       sub: 'Freelance & prestation, partout dans le monde. Dites-moi ce que vous construisez.',
       emailCta: 'M’envoyer un email',
       downloadCV: 'Télécharger le CV',
@@ -332,13 +330,14 @@ export function getContent(lang: Lang) {
     { name: 'Virbac', logo: companyLogos.virbac },
   ]
 
+  // Backend leads and is accented; AI integration stays last — a plus, not the pitch.
   const expertise: ExpertiseGroup[] = [
-    { key: 'backend', icon: 'backend', ...t.expertise.groups.backend, items: expertiseItems.backend },
-    { key: 'ai', icon: 'ai', ...t.expertise.groups.ai, items: expertiseItems.ai, accent: true },
+    { key: 'backend', icon: 'backend', ...t.expertise.groups.backend, items: expertiseItems.backend, accent: true },
     { key: 'cloud', icon: 'cloud', ...t.expertise.groups.cloud, items: expertiseItems.cloud },
     { key: 'data', icon: 'data', ...t.expertise.groups.data, items: expertiseItems.data },
     { key: 'observability', icon: 'observability', ...t.expertise.groups.observability, items: expertiseItems.observability },
     { key: 'frontend', icon: 'frontend', ...t.expertise.groups.frontend, items: expertiseItems.frontend },
+    { key: 'ai', icon: 'ai', ...t.expertise.groups.ai, items: expertiseItems.ai },
   ]
 
   const ex = t.experience.items

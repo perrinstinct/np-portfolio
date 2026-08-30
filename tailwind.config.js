@@ -59,10 +59,16 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        blink: {
+          '0%, 45%': { opacity: '1' },
+          '50%, 95%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
         marquee: 'marquee 36s linear infinite',
+        blink: 'blink 1.1s steps(1, end) infinite',
       },
     },
   },
