@@ -86,16 +86,15 @@ const T = {
       bookCall: 'Book a call',
       emailMe: 'Send me an email',
       trustedBy: 'Trusted to build for',
-      current: 'Current',
     },
     profile: {
       role: 'Senior Backend Engineer',
       stack: 'Java · Spring Boot · Cloud-native',
       headline: ['I build Java backends', 'that hold up in production.'],
       subhead:
-        'Senior software engineer, 5+ years designing and shipping Java / Spring Boot systems — today for Air France / KLM. REST APIs, clean architecture, PostgreSQL and cloud-native delivery on Azure.',
+        'Senior software engineer, 5+ years designing and shipping Java / Spring Boot systems — most recently for Air France / KLM. REST APIs, clean architecture, PostgreSQL and cloud-native delivery on Azure.',
       location: 'Working with clients worldwide · Remote first / remote friendly',
-      availability: 'Available for freelance',
+      availability: 'Available immediately',
     },
     stats: [
       { value: '5+', label: 'Years in production Java / Spring Boot' },
@@ -136,7 +135,7 @@ const T = {
       items: {
         airfrance: {
           role: 'Software Engineer — Full-Stack, Backend-focused',
-          period: 'Sept 2024 — Present',
+          period: 'Sept 2024 — Sept 2026',
           summary: 'Internal API integration platform used across engineering groups company-wide.',
           points: [
             'Backend on Java 25 / Spring Boot 4 — REST APIs, business services, PostgreSQL, Spring Security and CI/CD, with clean, scalable architecture.',
@@ -205,16 +204,15 @@ const T = {
       bookCall: 'Réserver un appel',
       emailMe: 'M’envoyer un email',
       trustedBy: 'Ils m’ont fait confiance',
-      current: 'Actuel',
     },
     profile: {
       role: 'Ingénieur Backend Senior',
       stack: 'Java · Spring Boot · Cloud-native',
       headline: ['Je construis des backends Java', 'qui tiennent en production.'],
       subhead:
-        'Ingénieur logiciel senior, 5+ ans à concevoir et livrer des systèmes Java / Spring Boot — aujourd’hui pour Air France / KLM. API REST, architecture propre, PostgreSQL et livraison cloud-native sur Azure.',
+        'Ingénieur logiciel senior, 5+ ans à concevoir et livrer des systèmes Java / Spring Boot — dernièrement pour Air France / KLM. API REST, architecture propre, PostgreSQL et livraison cloud-native sur Azure.',
       location: 'Missions partout dans le monde · Remote first / remote friendly',
-      availability: 'Disponible en freelance',
+      availability: 'Disponible immédiatement',
     },
     stats: [
       { value: '5+', label: 'Ans de Java / Spring Boot en production' },
@@ -255,7 +253,7 @@ const T = {
       items: {
         airfrance: {
           role: 'Ingénieur Logiciel — Full-Stack, orienté Backend',
-          period: 'Sept. 2024 — Aujourd’hui',
+          period: 'Sept. 2024 — Sept. 2026',
           summary: 'Plateforme interne d’intégration d’API utilisée par les équipes d’ingénierie de tout le groupe.',
           points: [
             'Backend en Java 25 / Spring Boot 4 — API REST, services métier, PostgreSQL, Spring Security et CI/CD, avec une architecture propre et scalable.',
@@ -328,7 +326,7 @@ export function getContent(lang: Lang) {
   }
 
   const trustedBy: Company[] = [
-    { name: 'Air France', logo: companyLogos.airfrance, note: t.ui.current },
+    { name: 'Air France', logo: companyLogos.airfrance },
     { name: 'Accenture', logo: companyLogos.accenture },
     { name: 'Virbac', logo: companyLogos.virbac },
   ]
@@ -345,7 +343,7 @@ export function getContent(lang: Lang) {
 
   const ex = t.experience.items
   const experiences: Experience[] = [
-    { company: 'Air France', logo: companyLogos.airfrance, current: true, tags: expTags.airfrance, ...ex.airfrance },
+    { company: 'Air France', logo: companyLogos.airfrance, tags: expTags.airfrance, ...ex.airfrance },
     { company: 'Accenture', logo: companyLogos.accenture, tags: expTags.accenture, ...ex.accenture },
     { company: 'Virbac', logo: companyLogos.virbac, tags: expTags.virbac, ...ex.virbac },
   ]
