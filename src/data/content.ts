@@ -24,7 +24,7 @@ export type Project = { name: string; tagline: string; description: string; tags
 
 // ── Language-invariant data ────────────────────────────────────────────────
 const links = {
-  email: 'nicolas.perrin83110@gmail.com',
+  email: 'contact@nicolasperrin.dev',
   linkedin: 'https://www.linkedin.com/in/nicolas-perrin-b6ab99171/',
   cv: '/Nicolas-Perrin-CV.pdf',
   photo: '/nicolas.jpg', // optimized from public/nicolas.png (sips, 1000px q82)
