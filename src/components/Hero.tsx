@@ -54,9 +54,12 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.24, ease }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <a href="#contact" className="btn-primary">
-                {ui.workTogether}
+              <a href={profile.calendly} target="_blank" rel="noreferrer" className="btn-primary">
+                {ui.bookCall}
                 <ArrowIcon width={16} height={16} />
+              </a>
+              <a href={`mailto:${profile.email}`} className="btn-ghost">
+                {ui.emailMe}
               </a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
                 <LinkedInIcon width={16} height={16} />

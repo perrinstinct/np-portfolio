@@ -28,6 +28,7 @@ const links = {
   linkedin: 'https://www.linkedin.com/in/nicolas-perrin-b6ab99171/',
   cv: '/Nicolas-Perrin-CV.pdf',
   photo: '/nicolas.jpg', // optimized from public/nicolas.png (sips, 1000px q82)
+  calendly: 'https://calendly.com/contact-nicolasperrin/30min',
 }
 
 const companyLogos = {
@@ -81,10 +82,11 @@ const T = {
       { href: '#contact', label: 'Contact' },
     ],
     ui: {
-      downloadCV: 'Download CV',
-      workTogether: 'Let’s work together',
-      trustedBy: 'Trusted to build for',
-      current: 'Current',
+      downloadCV: ‘Download CV’,
+      bookCall: ‘Book a call’,
+      emailMe: ‘Send me an email’,
+      trustedBy: ‘Trusted to build for’,
+      current: ‘Current’,
     },
     profile: {
       role: 'Senior Backend Engineer',
@@ -199,10 +201,11 @@ const T = {
       { href: '#contact', label: 'Contact' },
     ],
     ui: {
-      downloadCV: 'Télécharger le CV',
-      workTogether: 'Travaillons ensemble',
-      trustedBy: 'Ils m’ont fait confiance',
-      current: 'Actuel',
+      downloadCV: ‘Télécharger le CV’,
+      bookCall: ‘Réserver un appel’,
+      emailMe: ‘M’envoyer un email’,
+      trustedBy: ‘Ils m’ont fait confiance’,
+      current: ‘Actuel’,
     },
     profile: {
       role: 'Ingénieur Backend Senior',
