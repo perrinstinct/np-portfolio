@@ -1,7 +1,7 @@
 import { useContent } from '../i18n'
 import { Section } from './Section'
 import { Reveal } from './Reveal'
-import { ArrowUpRight } from './icons'
+import { ArrowUpRight, GitHubIcon } from './icons'
 
 export function Work() {
   const { work } = useContent()
@@ -10,9 +10,20 @@ export function Work() {
   return (
     <Section id="work" eyebrow={meta.eyebrow} title={meta.title} intro={meta.intro}>
       <div className="grid gap-4 lg:grid-cols-2">
-        {projects.map((p, i) => (
-          <Reveal as="article" key={p.name} delay={i * 0.08}>
-            <div className="card card-hover h-full rounded-2xl p-6 md:p-7">
+        {projects.map((p, i) => {
+          const featured = i === 0 && Boolean(p.link)
+          const cardClass = `card card-hover block h-full rounded-2xl p-6 md:p-7 ${
+            featured ? 'ring-1 ring-brand-200 bg-gradient-to-br from-brand-50/70 to-white' : ''
+          }`
+
+          const cardContent = (
+            <>
+              {featured && (
+                <p className="eyebrow mb-3 inline-flex items-center gap-1.5">
+                  <GitHubIcon width={13} height={13} />
+                  Open source
+                </p>
+              )}
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="font-display text-xl font-700 text-ink-900">{p.name}</h3>
@@ -30,9 +41,21 @@ export function Work() {
                   </span>
                 ))}
               </div>
-            </div>
-          </Reveal>
-        ))}
+            </>
+          )
+
+          return (
+            <Reveal as="article" key={p.name} delay={i * 0.08} className={featured ? 'lg:col-span-2' : undefined}>
+              {p.link ? (
+                <a href={p.link} target="_blank" rel="noreferrer" className={cardClass}>
+                  {cardContent}
+                </a>
+              ) : (
+                <div className={cardClass}>{cardContent}</div>
+              )}
+            </Reveal>
+          )
+        })}
 
         <Reveal as="article" delay={0.12}>
           <div className="card h-full rounded-2xl p-6 md:p-7">

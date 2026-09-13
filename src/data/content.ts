@@ -20,7 +20,7 @@ export type Experience = {
   points: readonly string[]
   tags: readonly string[]
 }
-export type Project = { name: string; tagline: string; description: string; tags: readonly string[] }
+export type Project = { name: string; tagline: string; description: string; tags: readonly string[]; link?: string }
 
 // ── Language-invariant data ────────────────────────────────────────────────
 const links = {
@@ -71,7 +71,11 @@ const expTags = {
 
 const projectTagsByProject = {
   agenticTrading: ['Java', 'Spring', 'Kafka', 'Event-driven'],
-  mcpSecAudit: ['Java 21', 'JavaParser', 'GraalVM', 'GitHub Actions', 'SARIF'],
+  mcpSecAudit: ['Java 21', 'JavaParser', 'GraalVM', 'GitHub Actions', 'SARIF', 'Apache-2.0'],
+}
+
+const projectLinks = {
+  mcpSecAudit: 'https://github.com/perrinstinct/mcp-sec-audit',
 }
 
 // ── Per-language strings ────────────────────────────────────────────────────
@@ -369,8 +373,8 @@ export function getContent(lang: Lang) {
 
   const wp = t.work.projects
   const projects: Project[] = [
+    { ...wp.mcpSecAudit, tags: projectTagsByProject.mcpSecAudit, link: projectLinks.mcpSecAudit },
     { ...wp.agenticTrading, tags: projectTagsByProject.agenticTrading },
-    { ...wp.mcpSecAudit, tags: projectTagsByProject.mcpSecAudit },
   ]
 
   return {
