@@ -69,7 +69,10 @@ const expTags = {
   virbac: ['Snowflake', 'Python', 'Talend', 'Power BI', 'SQL'],
 }
 
-const projectTags = ['Java', 'Spring', 'Kafka', 'Event-driven']
+const projectTagsByProject = {
+  agenticTrading: ['Java', 'Spring', 'Kafka', 'Event-driven'],
+  mcpSecAudit: ['Java 21', 'JavaParser', 'GraalVM', 'GitHub Actions', 'SARIF'],
+}
 
 // ── Per-language strings ────────────────────────────────────────────────────
 const T = {
@@ -167,11 +170,19 @@ const T = {
       eyebrow: 'Selected work',
       title: 'Side projects where I explore what’s next.',
       intro: 'Beyond client work, I prototype the architectures I believe in.',
-      project: {
-        name: 'Agentic Trading',
-        tagline: 'Event-driven decision-support · Java / Spring / Kafka',
-        description:
-          'A personal R&D project: a phase-gated, event-driven system built on Java, Spring and Kafka, where automated signals are surfaced with their rationale — and a human stays in control of every decision.',
+      projects: {
+        agenticTrading: {
+          name: 'Agentic Trading',
+          tagline: 'Event-driven decision-support · Java / Spring / Kafka',
+          description:
+            'A personal R&D project: a phase-gated, event-driven system built on Java, Spring and Kafka, where automated signals are surfaced with their rationale — and a human stays in control of every decision.',
+        },
+        mcpSecAudit: {
+          name: 'mcp-sec-audit',
+          tagline: 'An "npm audit" for MCP servers · Java / Spring AI',
+          description:
+            'Open source security scanner for MCP servers written in Spring AI: walks the Java AST, flags @Tool methods, and checks whether a model-controlled parameter can reach a sensitive operation (command execution, file access, network call). Plugs into CI via a GitHub Action.',
+        },
       },
       eduTitle: 'Education & languages',
       education: [
@@ -285,11 +296,19 @@ const T = {
       eyebrow: 'Projets sélectionnés',
       title: 'Des projets perso où j’explore la suite.',
       intro: 'Au-delà des missions, je prototype les architectures auxquelles je crois.',
-      project: {
-        name: 'Agentic Trading',
-        tagline: 'Aide à la décision event-driven · Java / Spring / Kafka',
-        description:
-          'Un projet perso de R&D : un système event-driven par paliers, bâti sur Java, Spring et Kafka, où des signaux automatisés sont présentés avec leur justification — l’humain gardant le contrôle de chaque décision.',
+      projects: {
+        agenticTrading: {
+          name: 'Agentic Trading',
+          tagline: 'Aide à la décision event-driven · Java / Spring / Kafka',
+          description:
+            'Un projet perso de R&D : un système event-driven par paliers, bâti sur Java, Spring et Kafka, où des signaux automatisés sont présentés avec leur justification — l’humain gardant le contrôle de chaque décision.',
+        },
+        mcpSecAudit: {
+          name: 'mcp-sec-audit',
+          tagline: 'Un « npm audit » pour les serveurs MCP · Java / Spring AI',
+          description:
+            'Scanner de sécurité open source pour les serveurs MCP écrits en Spring AI : analyse l’AST des sources Java, repère les méthodes @Tool, et vérifie si un paramètre contrôlé par le modèle peut atteindre une opération sensible (exécution de commande, accès fichier, appel réseau). S’intègre en CI via une GitHub Action.',
+        },
       },
       eduTitle: 'Formation & langues',
       education: [
@@ -348,7 +367,11 @@ export function getContent(lang: Lang) {
     { company: 'Virbac', logo: companyLogos.virbac, tags: expTags.virbac, ...ex.virbac },
   ]
 
-  const projects: Project[] = [{ ...t.work.project, tags: projectTags }]
+  const wp = t.work.projects
+  const projects: Project[] = [
+    { ...wp.agenticTrading, tags: projectTagsByProject.agenticTrading },
+    { ...wp.mcpSecAudit, tags: projectTagsByProject.mcpSecAudit },
+  ]
 
   return {
     nav: t.nav,
